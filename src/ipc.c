@@ -943,7 +943,7 @@ ngx_int_t ipc_alert_all_workers(ipc_t *ipc, ngx_str_t *name, ngx_str_t *data) {
 }
 
 #define COLLECT_PROCESS_PROPERTY(shdata, ipc_process_type, prop, dst_array, found_count)  \
-for(int i=0; i < shdata->process_count; i++) {                                \
+int i; for(i=0; i < shdata->process_count; i++) {                                \
   if ((ipc_process_type == IPC_NGX_PROCESS_WORKER && shdata->process_slots[i].ngx_process_type == NGX_PROCESS_WORKER) \
    || (ipc_process_type == IPC_NGX_PROCESS_ANY)                               \
    || (shdata->process_slots[i].process_type == ipc_process_type)){           \
